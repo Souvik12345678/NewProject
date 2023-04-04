@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 301a584eed3547049b44a5fee3ccbc4d, type: 3}
+  m_Name: SomeCommonAssets
+  m_EditorClassIdentifier: 
+  AllObstacleRanges: {fileID: 11400000, guid: 71425cdc5f55f5146861dd265b199dba, type: 2}
+  WoodenCrate: {fileID: 4421991888742566705, guid: 719127d5a848a6847979e24c85a6d75a,
+    type: 3}
+  Tire: {fileID: 3313715373093218062, guid: c68c09e70c43a814fb6a45f0d294bb78, type: 3}
+  AllObstacles:
+  - {fileID: 3313715373093218062, guid: c68c09e70c43a814fb6a45f0d294bb78, type: 3}
+  - {fileID: 4421991888742566705, guid: 719127d5a848a6847979e24c85a6d75a, type: 3}
+  bgm1: {fileID: 8300000, guid: c88275db70cb99d488e7700baf3efe69, type: 3}
+  bgm2: {fileID: 8300000, guid: f5d8f21d14df33c4d89add456904f323, type: 3}
+  boneBreakSfx: {fileID: 8300000, guid: eaff644053f69a7428cab079523745a1, type: 3}

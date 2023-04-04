@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - ground
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Legs
+  - Hands
+  - Torso
+  - Crusher
+  - Terrain
+  - Test
+  - Obstacles
+  - Limb
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 386177073
+    locked: 0
+  - name: Obstacles
+    uniqueID: 2704833371
+    locked: 0
+  - name: Debug
+    uniqueID: 2930054873
+    locked: 0
