@@ -10,15 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e1fb2c681f2bd74ea60f4beec27ee46, type: 3}
-  m_Name: Range2
+  m_Name: Range4
   m_EditorClassIdentifier: 
   isUsed: 0
-  startDist: 100
-  endDist: 150
+  startDist: 200
+  endDist: 250
   spawnInterval: 0
   spawnDistance: 0
-  spawnCount: 10
-  obstacleRatios: 0100000002000000
+  spawnCount: 5
+  obstacleRatios: 01000000
   obstaclePrefabs:
-  - {fileID: 4421991888742566705, guid: 719127d5a848a6847979e24c85a6d75a, type: 3}
-  - {fileID: 3313715373093218062, guid: c68c09e70c43a814fb6a45f0d294bb78, type: 3}
+  - {fileID: 7527290937804061248, guid: c2b7852cc353f75458e06ee1f975308a, type: 3}

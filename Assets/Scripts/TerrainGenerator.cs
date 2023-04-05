@@ -96,15 +96,8 @@ public class TerrainGenerator : MonoBehaviour
 
         _spriteShapeController.spline.InsertPointAt(_levelLength + 1, p);
 
-        //_spriteShapeController.colliderDetail = 2;
-        //_spriteShapeController.RefreshSpriteShape();
-        //_spriteShapeController.BakeCollider();
-
-        //Destroy(GetComponent<PolygonCollider2D>());
-
-        //var comp = gameObject.AddComponent<PolygonCollider2D>();
-
-        _spriteShapeController.RefreshSpriteShape();
+        //Update collider
+        _spriteShapeController.BakeMesh();
         _spriteShapeController.BakeCollider();
 
     }

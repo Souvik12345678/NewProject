@@ -4,25 +4,23 @@ using UnityEngine;
 
 public class CrusherScript : MonoBehaviour
 {
+    public float kickForceMul;
+
     public Rigidbody2D crusherBody;
 
     public float velocity;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void FixedUpdate()
     {
         crusherBody.velocity = new Vector2(velocity, crusherBody.velocity.y);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Torso"))
+        {
+            collision.rigidbody.AddForce(Vector2.right * kickForceMul, ForceMode2D.Impulse);
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e1fb2c681f2bd74ea60f4beec27ee46, type: 3}
   m_Name: Range3
   m_EditorClassIdentifier: 
-  isUsed: 1
-  startDist: 151
+  isUsed: 0
+  startDist: 150
   endDist: 200
   spawnInterval: 0
   spawnDistance: 0

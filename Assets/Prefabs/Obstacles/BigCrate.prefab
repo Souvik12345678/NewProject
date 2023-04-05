@@ -15,12 +15,12 @@ PrefabInstance:
     - target: {fileID: 4421991888742566704, guid: 719127d5a848a6847979e24c85a6d75a,
         type: 3}
       propertyPath: m_Interpolate
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4421991888742566704, guid: 719127d5a848a6847979e24c85a6d75a,
         type: 3}
       propertyPath: m_SleepingMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4421991888742566705, guid: 719127d5a848a6847979e24c85a6d75a,
         type: 3}
