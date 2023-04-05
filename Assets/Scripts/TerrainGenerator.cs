@@ -23,12 +23,12 @@ public class TerrainGenerator : MonoBehaviour
 
     private void Awake()
     {
-        GenerateTerrain();
+        //GenerateTerrain();
     }
 
     private void OnValidate()
     {
-        GenerateTerrain();
+        //GenerateTerrain();
     }
 
     public void GenerateTerrain()
@@ -100,6 +100,55 @@ public class TerrainGenerator : MonoBehaviour
         _spriteShapeController.BakeMesh();
         _spriteShapeController.BakeCollider();
 
+    }
+
+    public void GenerateTerrain(Vector3 lastSplinePoint, Vector3 lastSplineTangent)
+    {
+        _spriteShapeController.spline.Clear();
+        //Convert to local space
+        lastSplinePoint = transform.InverseTransformPoint(lastSplinePoint);
+
+        _lastPos = lastSplinePoint;
+
+        _spriteShapeController.spline.InsertPointAt(0, _lastPos);
+        //Set tangent of leftmost point
+        _spriteShapeController.spline.SetTangentMode(0, ShapeTangentMode.Broken);
+        _spriteShapeController.spline.SetLeftTangent(0, Vector3.down);
+        _spriteShapeController.spline.SetRightTangent(0, Vector3.right);
+
+        for (int i = 1; i < _levelLength; i++)
+        {
+            _lastPos = transform.position + new Vector3(i * _xMultiplier, Mathf.PerlinNoise(0, i * _noiseStep) * _yMultiplier);
+            //Convert to local space
+            _lastPos = transform.InverseTransformPoint(_lastPos);
+
+            _spriteShapeController.spline.InsertPointAt(i, _lastPos);
+
+            if (i != 0 && i != _levelLength - 1)
+            {
+                _spriteShapeController.spline.SetTangentMode(i, ShapeTangentMode.Continuous);
+                _spriteShapeController.spline.SetLeftTangent(i, Vector3.left * _xMultiplier * _curveSmoothness);
+                _spriteShapeController.spline.SetRightTangent(i, Vector3.right * _xMultiplier * _curveSmoothness);
+            }
+        }
+
+        //Set tangent of rightmost point
+        _spriteShapeController.spline.SetTangentMode(_levelLength - 1, ShapeTangentMode.Broken);
+        _spriteShapeController.spline.SetLeftTangent(_levelLength - 1, Vector3.left);
+        _spriteShapeController.spline.SetRightTangent(_levelLength - 1, Vector3.down);
+
+        rightMostPoint = _spriteShapeController.spline.GetPosition(_levelLength - 1);
+
+        Vector2 p = new Vector3(_lastPos.x, transform.InverseTransformPoint(new Vector2(0, transform.position.y - _bottom)).y);
+        _spriteShapeController.spline.InsertPointAt(_levelLength, p);
+
+        p = transform.InverseTransformPoint(new Vector3(transform.position.x, transform.position.y - _bottom));
+
+        _spriteShapeController.spline.InsertPointAt(_levelLength + 1, p);
+
+        //Update collider
+        _spriteShapeController.BakeMesh();
+        _spriteShapeController.BakeCollider();
     }
 
 }

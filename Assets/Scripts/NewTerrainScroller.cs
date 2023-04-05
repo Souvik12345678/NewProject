@@ -40,15 +40,15 @@ public class NewTerrainScroller : MonoBehaviour
         if (maxX > pos.x )
         {
             Vector3 p = new Vector2(pos.x, lastChunk.transform.position.y);
-            
-            var gO = Instantiate(terrainPrefab,p,Quaternion.identity);
+
+            var gO = Instantiate(terrainPrefab, p, Quaternion.identity);
             //gO.transform.position = new Vector2(pos.x, lastChunk.transform.position.y);
 
             //Generate random
             float s = Random.Range(1.0f, 10.0f);
 
             gO.GetComponent<TerrainGenerator>()._noiseStep = s;
-            gO.GetComponent<TerrainGenerator>().GenerateTerrain(pos);
+            gO.GetComponent<TerrainGenerator>().GenerateTerrain(pos, Vector3.left);
 
             lastChunk = gO;
             terrainChunksQ.Enqueue(gO);
