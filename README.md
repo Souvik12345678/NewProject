@@ -7,4 +7,4 @@ Will add multiplayer support in future.
 Made with **Unity**.</br>
 
 *Playable versions are in Assets/Scenes/Prototypes </br>
-Some of them works
+*Some of those work
