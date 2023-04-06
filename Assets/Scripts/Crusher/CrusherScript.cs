@@ -19,7 +19,10 @@ public class CrusherScript : MonoBehaviour
     {
         if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Torso"))
         {
-            collision.rigidbody.AddForce(Vector2.right * kickForceMul, ForceMode2D.Impulse);
+            //Calc normal
+            var norm = collision.contacts[0].normal;
+
+            collision.rigidbody.AddForce(norm * kickForceMul, ForceMode2D.Impulse);
         }
     }
 

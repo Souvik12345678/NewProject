@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
 
     void OnGameRestart()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }
