@@ -1,6 +1,6 @@
 # Runner Game
 
-Run through a hilly terrain while avoiding obstacles.
+Run through a hilly terrain while avoiding obstacles.</br>
 Tip: Do not get runover by a giant roller.
 
 Will add multiplayer support in future.
