@@ -11,6 +11,8 @@ public class CommonAssetSO : ScriptableObject
     [Header("Some Prefabs")]
     public GameObject WoodenCrate;
     public GameObject Tire;
+    public GameObject Roller;
+
     public GameObject[] AllObstacles;
 
     [Header("Background Sfx")]

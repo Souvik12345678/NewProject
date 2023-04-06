@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7527290937804061252}
   - component: {fileID: 7527290937804061253}
   - component: {fileID: 7527290937804061250}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Roller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxTorq: 25
-  maxAngVel: 10000
+  maxAngVel: 1000
   body: {fileID: 7527290937804061253}
   target: {fileID: 0}
 --- !u!1 &7527290939710735257
@@ -154,8 +154,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1590133925
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1ea1432bf9f5a22419fd11dd11237b4a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
