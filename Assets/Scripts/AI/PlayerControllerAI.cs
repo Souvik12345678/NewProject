@@ -11,13 +11,16 @@ public class PlayerControllerAI : MonoBehaviour
 
     public LazyDriveController controller;
 
+    public float minInDelay;
+    public float maxInDelay;
     public float inputDelay;
+    public float currentInputDelay;
 
     private float timer = 0.0f; // Timer
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentInputDelay = inputDelay;
     }
 
     // Update is called once per frame
@@ -45,7 +48,7 @@ public class PlayerControllerAI : MonoBehaviour
         }
 
         // Check if enough time has passed
-        if (timer < inputDelay)
+        if (timer < currentInputDelay)
         {
             timer += Time.deltaTime; // Update the timer with deltaTime
         }
@@ -55,6 +58,7 @@ public class PlayerControllerAI : MonoBehaviour
             {
                 ChangeControl(targetControl);
                 timer = 0.0f;
+                currentInputDelay = Random.Range(minInDelay, maxInDelay);
             }
         }
     }

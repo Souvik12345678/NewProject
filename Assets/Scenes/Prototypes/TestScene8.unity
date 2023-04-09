@@ -240,11 +240,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 128043633}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e594b653cb4d80e43bca923112503250, type: 3}
+  m_Script: {fileID: 11500000, guid: cb1d159f70497ac42a277a3b9f012c7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 0
-  player: {fileID: 8487022950184540595}
+  player: {fileID: 2475581594947499732}
   gameOverText: {fileID: 2145611372}
   audioManager: {fileID: 1091884942}
 --- !u!4 &128043635
@@ -4158,7 +4158,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!50 &2129737125
 Rigidbody2D:
   serializedVersion: 4
@@ -4906,7 +4906,7 @@ GameObject:
   - component: {fileID: 2475581594947499741}
   - component: {fileID: 2475581594947499740}
   - component: {fileID: 2475581594947499743}
-  - component: {fileID: 8487022950184540595}
+  - component: {fileID: 2475581594947499732}
   - component: {fileID: 9157781476461209402}
   - component: {fileID: 3282984303599438845}
   - component: {fileID: 2475581594947499730}
@@ -4932,7 +4932,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetControl: 0
   controller: {fileID: 2475581595003468808}
+  minInDelay: 0.01
+  maxInDelay: 0.07
   inputDelay: 0.05
+  currentInputDelay: 0
 --- !u!114 &2475581594947499731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4946,6 +4949,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 2475581595003468808}
+--- !u!114 &2475581594947499732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2475581594947499729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad908e265a555e64daa9f8820d37b9ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 2475581594947499743}
+  driveControl: {fileID: 2475581595003468808}
 --- !u!61 &2475581594947499738
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6133,20 +6150,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8487022950184540595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2475581594947499729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4f3962c0c9bf974ca3e77ed2cf1cad0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: {fileID: 2475581594947499743}
-  driveControl: {fileID: 0}
 --- !u!114 &9157781476461209402
 MonoBehaviour:
   m_ObjectHideFlags: 0
