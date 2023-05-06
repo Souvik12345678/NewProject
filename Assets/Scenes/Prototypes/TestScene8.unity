@@ -4932,8 +4932,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetControl: 0
   controller: {fileID: 2475581595003468808}
-  minInDelay: 0.01
-  maxInDelay: 0.07
+  minInDelay: 0.07
+  maxInDelay: 0.1
   inputDelay: 0.05
   currentInputDelay: 0
 --- !u!114 &2475581594947499731
