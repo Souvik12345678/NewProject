@@ -9,6 +9,7 @@ public class RollerScript : MonoBehaviour
 
     public Rigidbody2D body;
     public Transform target;
+    public AudioSource audSrc;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,7 @@ public class RollerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(body.angularVelocity);
+        //Debug.Log(body.angularVelocity);
     }
 
     private void FixedUpdate()
@@ -29,4 +30,14 @@ public class RollerScript : MonoBehaviour
             body.AddTorque(maxTorq);
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("crusher"))
+        {
+            audSrc.Play();
+            Destroy(gameObject);
+        }
+    }
+
 }
