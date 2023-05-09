@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4902070f2f10de441bc603454962ad54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kickForceMul: 0
+  kickForceMul: 20
   crusherBody: {fileID: 4864028089397649944}
   velocity: 2
 --- !u!1 &4864028089894661193
