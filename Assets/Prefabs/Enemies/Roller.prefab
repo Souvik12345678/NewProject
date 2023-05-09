@@ -182,9 +182,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxTorq: 25
   maxAngVel: 1000
+  spriteRenderer: {fileID: 7527290939710735256}
   body: {fileID: 7527290937804061253}
   target: {fileID: 0}
   audSrc: {fileID: 7888410711675327024}
+  explosionParticle: {fileID: 5317026835494549812, guid: 32e378b2e3310764996207a181980f3e,
+    type: 3}
+  commAsset: {fileID: 11400000, guid: 6a0f7904bd15eeb4a80637cbfad4904d, type: 2}
 --- !u!1 &7527290939710735257
 GameObject:
   m_ObjectHideFlags: 0

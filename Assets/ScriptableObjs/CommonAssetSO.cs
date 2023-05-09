@@ -22,4 +22,7 @@ public class CommonAssetSO : ScriptableObject
     [Header("Some Sfx")]
     public AudioClip boneBreakSfx;
 
+    public AudioClip explosionSfx;
+    public AudioClip explosionSfx1;
+
 }

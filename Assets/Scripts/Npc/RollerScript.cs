@@ -7,9 +7,14 @@ public class RollerScript : MonoBehaviour
     public float maxTorq;
     public float maxAngVel;
 
+    public SpriteRenderer spriteRenderer;
     public Rigidbody2D body;
     public Transform target;
     public AudioSource audSrc;
+
+    public GameObject explosionParticle;
+
+    public CommonAssetSO commAsset;
 
     // Start is called before the first frame update
     void Start()
@@ -35,9 +40,27 @@ public class RollerScript : MonoBehaviour
     {
         if (collision.collider.CompareTag("crusher"))
         {
-            audSrc.Play();
-            Destroy(gameObject);
+            CosmeticDestroy();
+            Destroy(gameObject, 5);
         }
+    }
+
+    void CosmeticDestroy()
+    {
+        int a = Random.Range(0, 2);
+        if (a == 0)
+            audSrc.clip = commAsset.explosionSfx;
+        else
+            audSrc.clip = commAsset.explosionSfx1;
+
+        audSrc.Play();
+        spriteRenderer.enabled = false;
+        GetComponent<Collider2D>().enabled = false;
+        body.velocity = new Vector2();
+
+        var exp = Instantiate<GameObject>(explosionParticle, transform.position, Quaternion.identity);
+        Destroy(exp, 5);
+
     }
 
 }

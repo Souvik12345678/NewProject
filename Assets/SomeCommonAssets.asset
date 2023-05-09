@@ -24,3 +24,5 @@ MonoBehaviour:
   bgm1: {fileID: 8300000, guid: c88275db70cb99d488e7700baf3efe69, type: 3}
   bgm2: {fileID: 8300000, guid: f5d8f21d14df33c4d89add456904f323, type: 3}
   boneBreakSfx: {fileID: 8300000, guid: eaff644053f69a7428cab079523745a1, type: 3}
+  explosionSfx: {fileID: 8300000, guid: 39b7f0dbaed7d3741a3f18ca44bae5fe, type: 3}
+  explosionSfx1: {fileID: 8300000, guid: be4a69a2704985c48979e3a8ae9fd539, type: 3}
