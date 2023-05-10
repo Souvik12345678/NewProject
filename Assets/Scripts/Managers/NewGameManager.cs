@@ -72,11 +72,14 @@ public class NewGameManager : MonoBehaviour
         if (currentGameMode == GameMode.ENDLESS)
         {
             endlessModeGameOverPanel.SetActive(true);
-            endlessModeGameOverPanel.transform.Find("DistanceLabel").GetComponent<TMP_Text>().text = "Distance: " + playerDistCounter.prettyDistance;
-            
-            
+            GetDistanceLabelEndless().text = "Distance: " + playerDistCounter.prettyDistance;
         
         }
+    }
+
+    TMP_Text GetDistanceLabelEndless()
+    {
+        return endlessModeGameOverPanel.transform.Find("Panel/DistanceLabel").GetComponent<TMP_Text>();
     }
 
 }

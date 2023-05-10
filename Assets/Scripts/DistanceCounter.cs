@@ -10,6 +10,7 @@ public class DistanceCounter : MonoBehaviour
     public TMP_Text distText;
 
     public Rigidbody2D playerBody;
+    public PlayerScript2 playerScript;
 
     float offX;
     public float dist;
@@ -46,6 +47,8 @@ public class DistanceCounter : MonoBehaviour
 
     void CalculateDistanceTravelled()
     {
+        if (!playerScript.health.IsAlive) return;//Calculate distance only if alive
+
         float x = playerBody.velocity.x;
         if (x > 0)
         {
