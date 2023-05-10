@@ -12,7 +12,13 @@ public class DistanceCounter : MonoBehaviour
     public Rigidbody2D playerBody;
 
     float offX;
-    float dist;
+    public float dist;
+
+    //Get the int distance
+    public int prettyDistance
+    {
+        get { return (int)Math.Truncate(dist); }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -24,12 +30,7 @@ public class DistanceCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //dist = player.position.x - offX;
-        //if (distText)
-        //{
-        //    distText.text = "Dist: " + Math.Truncate(dist).ToString() + "u";
-        //
-        //}
+        
     }
 
     private void FixedUpdate()
@@ -38,7 +39,7 @@ public class DistanceCounter : MonoBehaviour
 
         if (distText)
         {
-            distText.text = "Dist: " + Math.Truncate(dist).ToString() + "m";
+            distText.text = "Dist: " + prettyDistance.ToString() + "m";
         
         }
     }

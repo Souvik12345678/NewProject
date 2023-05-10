@@ -1,14 +1,20 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class NewGameManager : MonoBehaviour
 {
     public enum GameState { RUNNING, PAUSED, OVER }
+    public enum GameMode { ENDLESS, ENDFUL }
 
     public GameState gameState;
+    public GameMode currentGameMode;
 
     public PlayerScript2 player;
     public GameObject gameOverText;
+    public GameObject endlessModeGameOverPanel;
+
+    public DistanceCounter playerDistCounter;
 
     public AudioManager audioManager;
 
@@ -52,12 +58,25 @@ public class NewGameManager : MonoBehaviour
         //Debug.Log("Game Over");
         gameState = GameState.OVER;
 
-        gameOverText.SetActive(true);
+        //gameOverText.SetActive(true);
+        DisplayModalGameOverPanel();
     }
 
     void OnGameRestart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    void DisplayModalGameOverPanel()
+    {
+        if (currentGameMode == GameMode.ENDLESS)
+        {
+            endlessModeGameOverPanel.SetActive(true);
+            endlessModeGameOverPanel.transform.Find("DistanceLabel").GetComponent<TMP_Text>().text = "Distance: " + playerDistCounter.prettyDistance;
+            
+            
+        
+        }
     }
 
 }
